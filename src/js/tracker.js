@@ -41,7 +41,7 @@
 		forEach = require('lodash.foreach'),
 		helpers = require('./lib/helpers'),
 		proxies = require('./lib/proxies'),
-		cookie = require('browser-cookie-lite'),
+		cookie = require('./lib/cookie'),
 		detectors = require('./lib/detectors'),
 		sha1 = require('sha1'),
 		links = require('./links'),

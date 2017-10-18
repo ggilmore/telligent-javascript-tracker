@@ -67,7 +67,7 @@
 		var path = '/log/' + apiVersion + '/' + environment;
 
 		// Overriding bufferSize to 1 until batching is better implemented
-		bufferSize = 1;
+		var bufferSize = 1;
 		// bufferSize = (localStorageAccessible() && useLocalStorage && bufferSize) || 1;
 
 		queueName = ['telligentOutQueue', functionName, namespace].join('_');

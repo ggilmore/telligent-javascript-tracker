@@ -41,7 +41,7 @@
 		isFunction = require('lodash.isfunction'),
 		murmurhash3_32_gc = require('murmurhash').v3,
 		tz = require('jstimezonedetect').jstz.determine(),
-		cookie = require('browser-cookie-lite'),
+		cookie = require('./cookie'),
 
 		object = typeof exports !== 'undefined' ? exports : this, // For eventual node.js environment support
 		
