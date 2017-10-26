@@ -1,6 +1,6 @@
 /*
  * JavaScript tracker core for Telligent Data: payload.js
- * 
+ *
  * Copyright (c) 2016 Telligent Data, LLC. All rights reserved.
  *
  * This program is licensed to you under the Apache License Version 2.0,
@@ -13,9 +13,9 @@
  * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
  */
 
-;(function() {
+; (function () {
 
-	var 
+	var
 		meta = require('./metadata.js'),
 		util = require('./util.js'),
 		object = typeof exports !== 'undefined' ? exports : this;
@@ -30,7 +30,7 @@
 	 *
 	 * @return object The request string builder, with add, addRaw and build methods
 	 */
-	object.payloadBuilder = function(base64Encode) {
+	object.payloadBuilder = function (base64Encode) {
 		var data = {},
 			metadataCollection = meta.MetadataCollection(),
 			base64Encode = (base64Encode !== undefined ? base64Encode : true);
@@ -41,21 +41,21 @@
 			}
 		};
 
-		var remove = function(key) {
+		var remove = function (key) {
 			if (data.hasOwnProperty(key)) {
 				delete data[key];
 			}
 		}
 
-		var mergeMetadata = function(dict) {
+		var mergeMetadata = function (dict) {
 			metadataCollection.merge(dict);
 		};
 
-		var mergeMetadataCollection = function(collection) {
+		var mergeMetadataCollection = function (collection) {
 			metadataCollection.merge(collection.collect());
 		}
 
-		var resetMetadata = function(dict) {
+		var resetMetadata = function (dict) {
 			metadataCollection = meta.MetadataCollection();
 			metadataCollection.merge(dict);
 		};
@@ -68,7 +68,7 @@
 			}
 		};
 
-		var sanitize = function() {
+		var sanitize = function () {
 			var sanitizedData = util.sanitizePropertyNames(data);
 			if (sanitizedData.hasOwnProperty('type')) {
 				sanitizedData.type = util.toSnakeCase(sanitizedData.type);
@@ -79,15 +79,15 @@
 			};
 		}
 
-		var build = function() {
+		var build = function () {
 			var sanitized = sanitize();
 			var built = Object.assign({}, sanitized.metadata);
 			built['events'] = [sanitized.data];
 			return built;
 		}
 
-		var encode = function() {
-			encoded = JSON.stringify(build());
+		var encode = function () {
+			var encoded = JSON.stringify(build());
 			if (base64Encode) {
 				encoded = util.base64encode(encoded);
 			}
