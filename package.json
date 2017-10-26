@@ -1,6 +1,6 @@
 {
   "name": "@sourcegraph/telligent-tracker",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "telligent.js",
   "dependencies": {
     "jstimezonedetect": "1.0.5",
