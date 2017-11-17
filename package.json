@@ -1,6 +1,6 @@
 {
   "name": "@sourcegraph/telligent-tracker",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "telligent.js",
   "dependencies": {
     "jstimezonedetect": "1.0.5",
@@ -16,7 +16,7 @@
     "lodash.map": "^4.2.1",
     "murmurhash": "0.0.2",
     "semver": "^2.2.1",
-    "sha1": "git://github.com/pvorb/node-sha1.git#v1.0.0",
+    "sha1": "^1.1.1",
     "uuid": "^2.0.1"
   },
   "devDependencies": {
